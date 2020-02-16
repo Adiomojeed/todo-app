@@ -19,37 +19,44 @@ class TodoPage extends React.Component{
         this.setState({value: e.target.value})
     }
 
-    handleAdd(){
-        var arr = [...this.state.listItems]
+    handleAdd(){ 
+        const {value, listItems} = this.state
 
-        if (this.state.value.length > 1){
-            arr.push({value: this.state.value, key: this.state.value})
+        var arr = [...listItems]
+
+        if (value.length > 1){
+            arr.push({value: value, key: value})
         }
 
         else{
-            arr.push({value: this.state.value, key: this.state.value})
-            arr.pop({value: this.state.value, key: this.state.value})
+            arr.push({value: value, key: value})
+            arr.pop({value: value, key: value})
         }
         
         this.setState({listItems: arr, value: ''})
     }
 
     handleDelete(val){
-        var newArr = this.state.listItems.filter(x => (x.key != val))
+        const {listItems} = this.state
+
+        var newArr = listItems.filter(x => (x.key != val))
         this.setState({listItems: newArr})
     }
 
     render(){
+
+        const {value, listItems} = this.state
+
         return(
             <React.Fragment>
                 <div className='container'>
                 <h1>Todo List</h1>
                 <div className='form-group'>
-                    <input type='text' className='form-control' value={this.state.value} onChange={this.handleChange} />
+                    <input type='text' className='form-control' value={value} onChange={this.handleChange} />
                     <input type='submit' className='btn' value='Add Item' onClick={this.handleAdd} />
                 </div>
                 <ul className='list-group'>
-                    {this.state.listItems.map(item => (
+                    {listItems.map(item => (
                         <div className='dflex'>
                             <li key={item.key}>
                                 {item.value}

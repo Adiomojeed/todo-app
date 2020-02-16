@@ -31875,21 +31875,25 @@ function (_React$Component) {
   }, {
     key: "handleAdd",
     value: function handleAdd() {
-      var arr = _toConsumableArray(this.state.listItems);
+      var _this$state = this.state,
+          value = _this$state.value,
+          listItems = _this$state.listItems;
 
-      if (this.state.value.length > 1) {
+      var arr = _toConsumableArray(listItems);
+
+      if (value.length > 1) {
         arr.push({
-          value: this.state.value,
-          key: this.state.value
+          value: value,
+          key: value
         });
       } else {
         arr.push({
-          value: this.state.value,
-          key: this.state.value
+          value: value,
+          key: value
         });
         arr.pop({
-          value: this.state.value,
-          key: this.state.value
+          value: value,
+          key: value
         });
       }
 
@@ -31901,7 +31905,8 @@ function (_React$Component) {
   }, {
     key: "handleDelete",
     value: function handleDelete(val) {
-      var newArr = this.state.listItems.filter(function (x) {
+      var listItems = this.state.listItems;
+      var newArr = listItems.filter(function (x) {
         return x.key != val;
       });
       this.setState({
@@ -31913,6 +31918,9 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      var _this$state2 = this.state,
+          value = _this$state2.value,
+          listItems = _this$state2.listItems;
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("div", {
         className: "container"
       }, _react.default.createElement("h1", null, "Todo List"), _react.default.createElement("div", {
@@ -31920,7 +31928,7 @@ function (_React$Component) {
       }, _react.default.createElement("input", {
         type: "text",
         className: "form-control",
-        value: this.state.value,
+        value: value,
         onChange: this.handleChange
       }), _react.default.createElement("input", {
         type: "submit",
@@ -31929,7 +31937,7 @@ function (_React$Component) {
         onClick: this.handleAdd
       })), _react.default.createElement("ul", {
         className: "list-group"
-      }, this.state.listItems.map(function (item) {
+      }, listItems.map(function (item) {
         return _react.default.createElement("div", {
           className: "dflex"
         }, _react.default.createElement("li", {
@@ -32042,7 +32050,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42809" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40753" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
