@@ -1,18 +1,6 @@
-html{
-    background-color: rgb(0, 210, 211, .2);
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
 
-#app{
-    min-height: 100%;
-    position:relative;
-    overflow: hidden;
-}
+
+
 
 footer{
     bottom: 0;
@@ -129,3 +117,34 @@ i{
         transform: rotate(360deg);
     }
 }
+
+.lesson-item {
+    border: 1px solid teal;
+    padding: 30px;
+    text-align: center;
+}
+
+.lesson-item p {
+    font-weight: bold;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.modal-intro {
+    position: absolute;
+    top: 8%;
+    right: 0;
+    left: 0;
+    width: 480px;
+    padding-bottom: 60px;
+    margin: auto;
+    background-color: gold;
+    border-radius: 8px;
+}
+
